@@ -22,7 +22,7 @@
                     <td>{{item.address}}</td>
                     <td>
                         <button @click="onRemoveItem(item.id)">Xóa</button>
-                        <button>Sửa</button>
+                        <button @click="onEditItem(item)">Sửa</button>
                     </td>
                 </tr>
             </tbody>
@@ -48,7 +48,8 @@
     methods:{
         onRemoveItem(id){
             this.list = this.list.filter(item => item.id !== id);
-        } 
+        },
+        
     }
   }
 </script>

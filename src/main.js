@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './components/Manager/Manager.vue';
+import App from './App.vue';
 
 
 

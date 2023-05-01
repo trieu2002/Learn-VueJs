@@ -41,14 +41,16 @@
           age: this.age,
           phone: this.phone,
           address: this.address,
-        };
+        }
         this.list.push(newStudent);
         // reset input fields
         this.name = "";
         this.age = "";
         this.phone = "";
         this.address = "";
+        
       },
+      
     },
   };
   </script>

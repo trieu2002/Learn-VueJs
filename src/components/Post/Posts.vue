@@ -1,7 +1,7 @@
 <template>
   <div>
      <h2>Posts Data</h2>
-     <single-posts v-for="post in posts" :key="post.title" :post="post"></single-posts>
+     <single-post v-for="post in posts" :key="post.title" :post="post" :isActive="1"></single-post>
   </div>
 </template>
 <script>
@@ -28,5 +28,4 @@ import SinglePost from './SinglePost.vue';
    
  };
 </script>
-<style>
-</style>
+
