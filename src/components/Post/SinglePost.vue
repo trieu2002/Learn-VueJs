@@ -18,7 +18,11 @@
         },
         isActive:{
             type:Number,
-            required:true
+            required:false,
+            default:1,
+            validator(value){
+               return value===1 || value===2;
+            }
         }
     }
  }
