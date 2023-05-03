@@ -35,20 +35,33 @@ export default{
     }
    },
    methods:{
+    saveLocalStore(name,data){
+      localStorage.setItem(name,JSON.stringify(data));
+    },
+    getLocalStore(name){
+       return JSON.parse(localStorage.getItem(name));
+    },
+    removeLocalStore(name){
+      localStorage.removeItem(name);
+    },
     handleSubmit(){
        const findItem=this.todos.find(item=> item.id===this.id);
        if(findItem){
            findItem.name=this.newTodo.name;
            findItem.age=this.newTodo.age;
+           this.saveLocalStore('todo',this.todos);
            this.newTodo = { name: '', age: '' };
            this.id=null;
        }else{
         this.todos.push({...this.newTodo,id:Date.now()});
         this.newTodo = { name: '', age: '' };
+        this.saveLocalStore('todo',this.todos);
+        
        }
     },
     handleDelete(id){
        this.todos=this.todos.filter(item=> item.id!==id);
+       this.saveLocalStore('todo',this.todos);
     },
     editItem(id){
         const find=this.todos.find(item=> item.id==id);
