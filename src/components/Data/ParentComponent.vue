@@ -1,34 +1,34 @@
 <template>
-    <div>
-      
-      <ChildComponent></ChildComponent>
+  <div>
+    <ChildComponent @submit="handleSubmit" />
+    <div v-if="errors.length">
+      <ul>
+        <li v-for="error in errors" :key="error">{{ error }}</li>
+      </ul>
     </div>
-  </template>
-  
-  <script>
-  import ChildComponent from './ChildComponent.vue';
-  
-  export default {
-    data() {
-    return {
-      user: {
-        name: 'John',
-        age: 30
-      }
-    }
+    <div v-else>
+      <p>Email submitted: {{ email }}</p>
+    </div>
+  </div>
+</template>
+
+<script>
+import ChildComponent from "./ChildComponent.vue";
+
+export default {
+  components: {
+    ChildComponent
   },
-  provide() {
+  data() {
     return {
-      user: this.$data
-    }
+      email: "",
+      errors: []
+    };
   },
-  computed: {
-    userObj() {
-      return this.$data.user
+  methods: {
+    handleSubmit(email) {
+      this.email = email;
     }
   }
-    
-     
-  };
-  </script>
-  
+};
+</script>
