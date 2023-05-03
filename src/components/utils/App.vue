@@ -1,7 +1,7 @@
 <template>
     <div>
       <MyComponent title="Hello">
-        <p>World!</p>
+        <p>World!</p> // slots render
       </MyComponent>
     </div>
   </template>

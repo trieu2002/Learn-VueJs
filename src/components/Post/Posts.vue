@@ -1,49 +1,37 @@
 <template>
-  <div>
-     <h2>Posts Data</h2>
-     <div>
-      <select-component @change="onSelect"></select-component>
-     </div>
-     <single-post
-     
-     v-for="post in posts" 
-     :key="post.title" 
-     :post="post" 
-     :isActive="1">
-     class="hai"
-     id="post-id"
-     </single-post>
-  </div>
+    <div>Post Data</div>
+     <div v-if="!posts.length">Loading Data</div>
+    <table class="table" v-if="posts.length>0">
+        <thead>
+            <tr>
+               <th>Id</th>
+               <th>Title</th>
+               <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="post in posts" :key="post.id">
+                <td>{{post.id}}</td>
+                <td>{{ post.title }}</td>
+                <td>{{post.body}}</td>
+            </tr>
+        </tbody>
+    </table>
 </template>
 <script>
-import SinglePost from './SinglePost.vue';
-import SelectComponent from './SelectComponent.vue';
- export default{
-   
+  import axios from 'axios';
+  export default{
     data(){
-       return{
-        posts:[
-        {
-          title:"Title 1",desc:"Mieu ta 1"
-
-        },
-        {
-          title:"Title 2",desc:"Mieu ta 2"
+        return{
+            posts:[]
         }
-       ]      
-       }
     },
-    components:{
-      SinglePost,
-      SelectComponent
-    },
-    methods:{
-      onSelect(event){
-         console.log(event.target.value);
-      }
+    mounted(){
+      axios.get(`https://jsonplaceholder.typicode.com/posts`)
+      .then((res)=> {
+          this.posts=res.data;
+      })
+
     }
-
-   
- };
+  }
 </script>
-

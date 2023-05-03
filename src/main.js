@@ -1,6 +1,20 @@
 import { createApp } from 'vue'
-import App from "./components/Data/ParentComponent.vue";
+import App from "./App.vue";
+
+
+/*
+ thêm mặc địn router  và like headers
+
+
+*/
 
 
 
-createApp(App).mount('#app')
+const app = createApp(App);
+
+
+
+
+app.mount("#app");
+
+

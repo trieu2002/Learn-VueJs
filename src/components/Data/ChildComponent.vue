@@ -1,20 +1,18 @@
 <template>
-    <ul>
-      <li v-for="item in items" :key="item.id">
-        {{ item.name }}
-      </li>
-    </ul>
+     <div>
+         <button @click="emitGreet">Say Hello</button>
+     </div>
   </template>
   
   <script>
   export default {
-    inject: ['user'], // ten phải trùng với tên giá trin trong mảng
-    computed: {
-    user() {
-      return this.userObj
+    methods:{
+      emitGreet(){
+        this.$emit('greet','Vues');
+      }
     }
   }
    
-  };
+  
   </script>
   
