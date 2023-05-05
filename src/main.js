@@ -3,6 +3,8 @@ import App from "./pages/App.vue";
 import Home from './pages/Home.vue';
 import Posts from './pages/Posts.vue';
 import CreatePost from './pages/CreatePost.vue';
+import ShowPost from './pages/ShowPost.vue';
+import UpdatePost from './pages/UpdatePost.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 /*
  thêm mặc địn router  và like headers
@@ -16,7 +18,18 @@ const routes = [
     },
     {
         path: "/posts",
-        component: Posts
+        component: Posts,
+
+    },
+    {
+        path: "/posts/:id",
+        component: ShowPost,
+        props: true
+    },
+    {
+        path: "/postUpdate/:id",
+        component: UpdatePost,
+        props: true
     },
     {
         path: "/createpost",
