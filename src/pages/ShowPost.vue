@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>Show Post</h2>
-        <div v-for="(post,index) in posts" :key="post.id">
+        <div v-for="(post) in posts" :key="post.id">
             <h3>{{ post.name }}</h3>
             <p>{{ post.price }}</p>
             <img :src="post.image" alt="" width="200" height="100">  <br>
@@ -72,7 +72,7 @@ export default {
    
       
     }
-  localStorage.setItem('cart', JSON.stringify(this.cart));
+    localStorage.setItem('cart', JSON.stringify(this.cart));
 }
 
     }
