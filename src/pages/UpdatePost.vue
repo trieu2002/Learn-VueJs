@@ -45,9 +45,7 @@
   }
    },
     methods: {
-     async onChangeFile(){
-            
-     },
+    
       async getProduct() {
         try {
           const { data } = await API.getProductSingle(this.id);
