@@ -5,6 +5,7 @@ import Posts from './pages/Posts.vue';
 import CreatePost from './pages/CreatePost.vue';
 import ShowPost from './pages/ShowPost.vue';
 import UpdatePost from './pages/UpdatePost.vue';
+import Cart from './pages/Cart.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 /*
  thêm mặc địn router  và like headers
@@ -34,6 +35,10 @@ const routes = [
     {
         path: "/createpost",
         component: CreatePost
+    },
+    {
+        path: "/cart",
+        component: Cart
     }
 ]
 

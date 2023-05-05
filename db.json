@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": 4,
-      "name": "Trà dâu nữ hoàng udpate hihi",
-      "image": "http://res.cloudinary.com/levantuan/image/upload/v1645172713/assignment-js/z5bgto4mfwxh89b3s9ag.png",
-      "description": "<p>Dâu rừng có hình dáng dễ thương, màu sắc đẹp mắt và vị chua ngọt ăn hoài không ngán đã đốn tim nhiều bạn trẻ. Không chỉ dừng lại ở mức đẹp, ngon, dâu rừng còn là loại trái cây bổ dưỡng.</p><p>Trong dâu rừng chứa nhiều vitamin C – loại vitamin thần kì tăng sức đề kháng cho cơ thể và ngăn chặn quá trình lão hóa của cơ thể. Dâu rừng còn được xem là người bạn thân thiện của da. Các dưỡng chất có trong dâu tây giúp cho da luôn hồng hào, tươi trẻ.</p><p>Trà dâu nữ hoàng là sự kết hợp hài hòa giữa vị trà thanh mát cùng vị chua ngọt của trái dâu rừng sẽ tạo nên một thức uống tuyệt vời cho mọi người.</p>",
-      "price": 42000
-    },
-    {
       "name": "Trà đào gừng",
       "image": "http://res.cloudinary.com/levantuan/image/upload/v1645172791/assignment-js/fxbjbymklnxbobsrpjmo.png",
       "price": 42000,
@@ -144,6 +137,20 @@
       "createdAt": "2022-02-18T08:34:18.269Z",
       "updatedAt": "2022-02-18T08:34:18.269Z",
       "id": 13
+    },
+    {
+      "id": "8135e8d4-fc73-411d-8e2a-5e9defe3b1eb",
+      "name": "anh 1",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "90000",
+      "description": "Anhr ddklkasakjka"
+    },
+    {
+      "id": "cec07150-a74d-4a75-b746-6be90a18a5a9",
+      "name": "anh 3",
+      "image": "https://picsum.photos/seed/picsum/200/300",
+      "price": "100000",
+      "description": "jdkasjkldjasdajkl"
     }
   ]
 }
