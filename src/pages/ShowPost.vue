@@ -12,7 +12,7 @@
             </div>
             <button>
                <router-link to="/cart" @click.prevent="addToCart(post.id)">Add to Cart</router-link>
-             </button>
+            </button>
         </div>
     </div>
 </template>
@@ -68,8 +68,6 @@ export default {
         const item=this.posts.find(item=> item.id==id);
         console.log(item);
         this.cart.push({...item,qty:this.qty});
-       
-   
       
     }
     localStorage.setItem('cart', JSON.stringify(this.cart));

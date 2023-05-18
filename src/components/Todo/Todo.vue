@@ -25,7 +25,7 @@
     </div>   
   </template>
   
-  <script>
+<script>
     export default{
       props: ['todos'],
       methods: {
@@ -37,5 +37,5 @@
           }
       }
     }
-  </script>
+</script>
   

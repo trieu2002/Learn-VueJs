@@ -42,7 +42,7 @@
      this.id = this.$route.params?.id || "";
       if (this.id) {
       this.getProduct();
-  }
+    }
    },
     methods: {
     

@@ -4,11 +4,11 @@
         <table class="table">
             <thead>
                  <tr>
-                    <th>Id</th>
+                    <th width="20">Id</th>
                     <th>Name</th>
                     <th >Ảnh</th>
                     <th>Price</th>
-                    <th width="600">Desciption</th>
+                    <th width="500">Desciption</th>
                     <th>Actions</th>
                  </tr>
             </thead>
@@ -23,7 +23,7 @@
                          <td>{{ item.description }}</td>
                          <td>
                             <router-link :to="`/posts/${item.id}`" class="btn btn-danger">Show Detail</router-link>
-                            <button @click.prevent="onDeletPost(item.id)" class="btn btn-danger">Delete</button>
+                            <button @click.prevent="onDeletPost(item.id)" class="btn btn-warning">Delete</button>
                             <router-link :to="`/postUpdate/${item.id}`" :key="item.id" class="btn btn-primary">Update</router-link>
                          </td>
                          

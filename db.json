@@ -137,20 +137,6 @@
       "createdAt": "2022-02-18T08:34:18.269Z",
       "updatedAt": "2022-02-18T08:34:18.269Z",
       "id": 13
-    },
-    {
-      "id": "8135e8d4-fc73-411d-8e2a-5e9defe3b1eb",
-      "name": "anh 1",
-      "image": "https://picsum.photos/seed/picsum/200/300",
-      "price": "90000",
-      "description": "Anhr ddklkasakjka"
-    },
-    {
-      "id": "cec07150-a74d-4a75-b746-6be90a18a5a9",
-      "name": "anh 3",
-      "image": "https://picsum.photos/seed/picsum/200/300",
-      "price": "100000",
-      "description": "jdkasjkldjasdajkl"
     }
   ]
 }
