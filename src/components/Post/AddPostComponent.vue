@@ -33,6 +33,8 @@
            axios.post(`https://basic-vuejs-658e9-default-rtdb.firebaseio.com/posts.json`,this.post)
            .then((res)=> {
                console.log(res);
+           }).catch(err=>{
+               console.log('err',err);
            })
         }
       }

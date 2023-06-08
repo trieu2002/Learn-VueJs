@@ -45,6 +45,14 @@ export default{
             cart:JSON.parse(localStorage.getItem("cart")) || []
         }
     },
+    watch:{
+        cart:{
+            deep:true,
+            handler(newCart){
+                localStorage.setItem("cart", JSON.stringify(newCart));
+            }
+        }
+    },
     computed: {
     totalPrice() {
       return this.cart.reduce((total, item) => total + item.qty * item.price, 0);
@@ -57,17 +65,17 @@ export default{
         onIncreQty(item) { 
            
             item.qty++;
-            localStorage.setItem("cart", JSON.stringify(this.cart));
+            
         },
         onDereQty(item) {
             if (item.qty > 1) {
                 item.qty--;
-                localStorage.setItem("cart", JSON.stringify(this.cart));
+              
             }else{
                if(window.confirm("Bạn có chắc chắn muốn xóa")){
                 const index = this.cart.indexOf(item);
                 this.cart.splice(index, 1);
-                localStorage.setItem("cart", JSON.stringify(this.cart));
+               
                }
             }
         },

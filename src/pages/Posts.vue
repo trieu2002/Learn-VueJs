@@ -1,5 +1,9 @@
 <template>
     <div>
+        <div>
+            <label for="">Tìm kiếm</label>
+            <input type="text" v-model="search">
+        </div>
         <h3>Quản lý post</h3>
         <table class="table">
             <thead>
@@ -38,8 +42,20 @@ export default {
   name: "Post",
   data() {
     return {
-      post: []
+      post: [],
+      search:"",
+      filteredPost: [] // danh sách sau khi tìm kiếm
     };
+  },
+  watch:{
+      search(newValue){
+         if(newValue.trim()==""){
+            this.filteredPost=[...this.post];
+         }else{
+           this.filteredPost=this.post.filter(item=>item.name.includes(newValue))
+         }
+      },
+     
   },
   created() {
     this.getProduct();
@@ -56,12 +72,13 @@ export default {
     },
     formatPost(data) {
         this.post=[...data];
+        this.filteredPost=[...data];
         
       
      
     },
     async onDeletPost(id) {
-      console.log(id);
+      
       try {
         if (window.confirm("Bạn có chắc chắn muốn xóa ?")) {
           await API.removeProduct(id);

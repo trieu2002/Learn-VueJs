@@ -33,7 +33,20 @@ export default {
         console.log('watch gọi');
         this.getDetail();
       },
-     
+      qty(newQty) {
+        if(newQty<1){ 
+            this.qty=1;
+       }
+       
+    },
+    cart: {
+      handler(newCart) {
+        localStorage.setItem('cart', JSON.stringify(newCart));
+      },
+      deep: true
+    },
+    
+    
       
     },
     created() {
@@ -41,7 +54,7 @@ export default {
     },
     methods:{
         getDetail(){
-            this.id = this.$route.params.id;
+        this.id = this.$route.params.id;
          API.getProductSingle(this.id)
             .then(res => {
                  console.log(res.data);
@@ -57,7 +70,7 @@ export default {
         },
         decreQty(){
             this.qty--;
-            if(this.qty<1) this.qty=1;
+         
         },
         addToCart(id) {
       const findItem = this.cart.find(item => item.id === id);
@@ -70,7 +83,7 @@ export default {
         this.cart.push({...item,qty:this.qty});
       
     }
-    localStorage.setItem('cart', JSON.stringify(this.cart));
+    
 }
 
     }
